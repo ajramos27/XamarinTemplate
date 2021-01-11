@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("TimeTracker.App.xaml", "App.xaml", typeof(global::TimeTracker.App))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("TimeTracker.Views.Settings.xaml", "Views/Settings.xaml", typeof(global::TimeTracker.Views.Settings))]
 
-namespace TimeTracker {
+namespace TimeTracker.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("App.xaml")]
-    public partial class App : global::Xamarin.Forms.Application {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\Settings.xaml")]
+    public partial class Settings : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(App));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(Settings));
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace TimeTracker.ViewModels.Base
@@ -21,6 +22,11 @@ namespace TimeTracker.ViewModels.Base
         {
             get => _isLoading;
             set => SetProperty(ref _isLoading, value);
+        }
+
+        public virtual Task InitializeAsync(object navigationData = null)
+        {
+            return Task.CompletedTask;
         }
 
         //Method to update properties

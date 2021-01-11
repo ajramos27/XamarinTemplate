@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TimeTracker.Services.Navigation;
+using TimeTracker.Views;
 using TinyIoC;
 using Xamarin.Forms;
 
@@ -17,8 +19,15 @@ namespace TimeTracker.ViewModels.Base
             _viewLookup = new Dictionary<Type, Type>();
 
             //Register pages and pages models
+            Register<LoginViewModel, LoginPage>();
+            Register<DashboardViewModel, DashboardPage>();
+            Register<ProfileViewModel, ProfilePage>();
+            Register<SettingsViewModel, SettingsPage>();
+            Register<SummaryViewModel, SummaryPage>();
+            Register<TimeClockViewModel, TimeClockPage>();
 
             //Register services (services are registered as Singletons by default)
+            _container.Register<INavigationService, NavigationService>();
         }
 
         public static T Resolve<T>() where T : class //T probably a ViewModel
@@ -36,6 +45,12 @@ namespace TimeTracker.ViewModels.Base
             page.BindingContext = viewModel;
 
             return page;
+        }
+
+        static void Register<TViewModel, TPage>() where TViewModel : ViewModelBase where TPage: Page
+        {
+            _viewLookup.Add(typeof(TViewModel), typeof(TPage));
+            _container.Register<TViewModel>();
         }
 
 
